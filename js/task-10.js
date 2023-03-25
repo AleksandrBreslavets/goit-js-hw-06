@@ -18,13 +18,15 @@ function onGetInputValue() {
 	return Number(input.value);
 }
 function createBoxes(amount) {
+  const boxes = [];
   for (let i =0; i < amount; i++){
     const createdDiv = document.createElement("div");
     createdDiv.style.width = `${sizeOfDiv + i * 10}px`;
     createdDiv.style.height = `${sizeOfDiv + i * 10}px`;
     createdDiv.style.backgroundColor = getRandomHexColor();
-    divBox.append(createdDiv);
+    boxes.push(createdDiv)
   }
+  divBox.append(...boxes);
 }
 function destroyBoxes() {
   divBox.innerHTML = "";
