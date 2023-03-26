@@ -21,13 +21,15 @@ function createBoxes(amount) {
   const boxes = [];
   for (let i =0; i < amount; i++){
     const createdDiv = document.createElement("div");
-    createdDiv.style.width = `${sizeOfDiv + i * 10}px`;
-    createdDiv.style.height = `${sizeOfDiv + i * 10}px`;
+    createdDiv.style.width = `${sizeOfDiv}px`;
+    createdDiv.style.height = `${sizeOfDiv}px`;
     createdDiv.style.backgroundColor = getRandomHexColor();
-    boxes.push(createdDiv)
+    boxes.push(createdDiv);
+    sizeOfDiv += 10;
   }
   divBox.append(...boxes);
 }
 function destroyBoxes() {
+  sizeOfDiv = 30;
   divBox.innerHTML = "";
 }

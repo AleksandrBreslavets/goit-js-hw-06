@@ -1,7 +1,7 @@
 const input = document.querySelector("#name-input");
 const nameOfUser = document.querySelector("#name-output");
-input.addEventListener("change", onInputChange);
+input.addEventListener("input", onInputChange);
+const defaultUserName = nameOfUser.textContent;
 function onInputChange(evt) {
-    const defaultUserName = input.textContent;
-    nameOfUser.textContent = evt.currentTarget.value || defaultUserName;
+    nameOfUser.textContent = evt.currentTarget.value.trim() || defaultUserName;
 };
