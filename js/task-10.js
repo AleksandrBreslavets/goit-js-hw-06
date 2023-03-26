@@ -30,6 +30,6 @@ function createBoxes(amount) {
   divBox.append(...boxes);
 }
 function destroyBoxes() {
-  sizeOfDiv = 30;
   divBox.innerHTML = "";
+  sizeOfDiv = 30;
 }
